@@ -1,0 +1,23 @@
+.todo-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 25%;
+  height: 90%;
+  background-color: #F6E9E9;
+  color: black;
+  border-radius: 4px;
+  margin: 4px;
+  border: 2px solid #F6E9E9;
+
+}
+
+.card-button-container {
+  display: flex;
+  padding: 2px;
+  justify-content: space-evenly;
+}
+
+.card-button {
+  display: flex;
+  margin: 4px;
+}
