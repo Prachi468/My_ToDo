@@ -24,7 +24,7 @@ function App() {
 
     todo.push(newTodo) //adding new object in state
     setTodo([...todo]) // updating state
- 
+
 
     localStorage.setItem("data", JSON.stringify(todo)) // Updating Local Storage with state
   }
@@ -32,9 +32,11 @@ function App() {
   const completeHendlar = (id) => {
     let temp = todo;
     temp.map((e) => {
-      if (e.id === id) {
+      return (<> if (e.id === id) {
         e.isCompleted = true
-      }
+      }</>)
+
+
     })
     console.log(...temp);
     setTodo([...temp])
@@ -45,9 +47,10 @@ function App() {
     let temp = todo
 
     temp.map((e) => {
-      if (e.id === id) {
+      return (<>  if (e.id === id) {
         e.isDeleted = true
-      }
+     }</>)
+
     })
     console.log(...temp)
     setTodo([...temp])
