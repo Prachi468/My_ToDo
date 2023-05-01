@@ -13,8 +13,8 @@
 .title {
   font-size: xx-large;
   color: #E16428;
-  margin: 2px;
-  padding: 2px;
+  margin: 12px;
+  padding: 4px;
 }
 
 .input-container {
@@ -44,6 +44,8 @@
   background-color: #E16428;
 
 }
+
+
 .card-container{
   display: flex;
   flex-direction: column;
@@ -52,6 +54,7 @@
 }
 .main-card{
   display: flex;
+  flex-direction: column;
 
 }
 .card-container p{
@@ -62,4 +65,16 @@
   color: #F6E9E9;
   margin: 6px;
   padding: 6px;
+}
+.main-card-container{
+  /* border: 2px solid white; */
+  height: 70%;
+  width: 21rem;
+  display: flex;
+  flex-direction: column; 
+  /* justify-content: center; */
+  align-items: center;
+  /* flex-flow: wrap; */
+  overflow-y: scroll;
+  margin: 0 0 2rem 0;
 }

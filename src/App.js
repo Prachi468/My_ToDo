@@ -55,8 +55,9 @@ function App() {
         <input placeholder='Write your planned work..' name='todo' value={newTitle} type='text' onChange={(data) => setNewTitle(data.target.value)} />
         <button onClick={addHandler}>Add</button>
       </div>
-      <div className='card-container'>
-        <p>Pendding Tasks</p>
+    <div className='main-card-container'>
+    <div className='card-container'>
+        <p className='card-container-heaing'>Pendding Tasks</p>
         <div className='main-card'>
           {
             todo.map((e) => {
@@ -69,7 +70,7 @@ function App() {
         </div>
       </div>
       <div className='card-container'>
-        <p>Completed Tasks</p>
+        <p className='card-container-heaing'>Completed Tasks</p>
         <div className='main-card'>
           {
             todo.map((e) => {
@@ -81,6 +82,7 @@ function App() {
           }
         </div>
       </div>
+    </div>
 
     </div>
   );
