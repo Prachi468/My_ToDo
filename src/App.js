@@ -27,41 +27,32 @@ function App() {
 
 
     localStorage.setItem("data", JSON.stringify(todo)) // Updating Local Storage with state
+    setNewTitle('');
   }
 
   const completeHendlar = (id) => {
     let temp = todo;
-    temp.map((e) => {
-      return (<> if (e.id === id) {
-        e.isCompleted = true
-      }</>)
-
-
-    })
-    console.log(...temp);
+    let cid=todo.findIndex(item=>{return item.id===id});//index of object which is to changed;
+    console.log(temp[cid].isCompleted);
+    temp[cid].isCompleted=true;
     setTodo([...temp])
     localStorage.setItem("data", JSON.stringify(todo))
   }
 
   const deleteHendlar = (id) => {
-    let temp = todo
+    let temp=todo;
+    let did=todo.findIndex(item=>{return item.id===id});//index of the object which is to be deleted.
+    temp.splice(did,1)//remove the object which is to be delted and only one object not the other ones.
+    localStorage.setItem("data",JSON.stringify(todo));
+    setTodo([...temp]);
 
-    temp.map((e) => {
-      return (<>  if (e.id === id) {
-        e.isDeleted = true
-     }</>)
-
-    })
-    console.log(...temp)
-    setTodo([...temp])
-    localStorage.setItem("data", JSON.stringify(todo))
   }
 
   return (
     <div className='main-container'>
       <div className='title'>My Todos</div>
       <div className='input-container'>
-        <input placeholder='Write your planned work..' name='todo' type='text' onChange={(data) => setNewTitle(data.target.value)} />
+        <input placeholder='Write your planned work..' name='todo' value={newTitle} type='text' onChange={(data) => setNewTitle(data.target.value)} />
         <button onClick={addHandler}>Add</button>
       </div>
       <div className='card-container'>
